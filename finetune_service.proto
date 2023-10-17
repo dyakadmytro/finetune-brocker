@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package finetune;
+
+service FineTuneService {
+    rpc FineTuneModel(FineTuneRequest) returns (FineTuneResponse);
+}
+
+message FineTuneRequest {
+    string file_path = 1;
+    string model_suffix = 2;
+}
+
+message FineTuneResponse {
+    string model_id = 1;
+    string status = 2;
+}
